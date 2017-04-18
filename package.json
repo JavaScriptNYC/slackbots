@@ -1,0 +1,27 @@
+{
+  "name": "JSNYC_Slackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JavaScriptNYC/slackbots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JavaScriptNYC/slackbots/issues"
+  },
+  "homepage": "https://github.com/JavaScriptNYC/slackbots#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "meetup-api": "^1.4.10",
+    "slackbots": "^1.0.2"
+  }
+}

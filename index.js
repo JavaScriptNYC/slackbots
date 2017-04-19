@@ -35,10 +35,12 @@ app.post('/', (req, res) => {
         json: true
       })
       .then((response) => {
+        console.log(response);
         let responseData = {
           response_type: 'in_channel',
           text: response.contents.quotes[0].quote
         }
+        console.log(responseData);
         res.json(responseData)
       })
 

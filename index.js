@@ -2,6 +2,8 @@ require('dotenv').config()
 const Promise = require('bluebird')
 const express = require('express')
 const bodyParser = require('body-parser')
+const request = require('request-promise')
+
 const meetup = Promise.promisifyAll(require('meetup-api')({key: process.env.MEETUP_API_KEY}))
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -30,6 +32,17 @@ app.post('/', (req, res) => {
       break;
     case '/shamoon':
       res.send('I am Shamoon')
+
+    case '/quote'
+      request({
+        url: 'http://quotes.rest/qod',
+        json: true
+      })
+      .then((response) => {
+        res.send(response.contents.quotes[0].quote)
+      })
+
+      break
     default:
       res.json({stuff: 'ok'})
 

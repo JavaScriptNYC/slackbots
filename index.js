@@ -35,7 +35,11 @@ app.post('/', (req, res) => {
         json: true
       })
       .then((response) => {
-        res.send(response.contents.quotes[0].quote)
+        let responseData = {
+          response_type: 'in_channel',
+          text: response.contents.quotes[0].quote
+        }
+        res.json(responseData)
       })
 
       break

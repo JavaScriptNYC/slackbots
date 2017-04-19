@@ -28,6 +28,8 @@ app.post('/', (req, res) => {
       })
       res.send('Next meetup is')
       break;
+    case '/shamoon':
+      res.send('I am Shamoon')
     default:
       res.json({stuff: 'ok'})
 

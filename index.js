@@ -15,12 +15,6 @@ const server = app.listen(PORT, () => {
   console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env)
 })
 
-meetup.getEventsAsync()
-.then((response) => {
-  console.log(response);
-})
-
-
 app.post('/', (req, res) => {
   switch (req.body.command) {
     case '/meetup':
@@ -30,10 +24,12 @@ app.post('/', (req, res) => {
       })
       res.send('Next meetup is')
       break;
+
     case '/shamoon':
       res.send('I am Shamoon')
+      break
 
-    case '/quote'
+    case '/quote':
       request({
         url: 'http://quotes.rest/qod',
         json: true
